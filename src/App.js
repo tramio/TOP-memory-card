@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Main from "./components/Main";
 
 class App extends Component {
   render() {
     return (
-      <h1>Hello World xD</h1>
+      <Main />
     );
   };
 }
