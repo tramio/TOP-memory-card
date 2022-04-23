@@ -1,16 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import Card from "./Card";
 
-class Deck extends Component {
-  render() {
-    return (
-      <div className="deck">
-        <Card />
-        <Card />
-        <Card />
-      </div>
-    )
-  }
+const Deck = () => {
+  return (
+    <div className="deck">
+      <Card />
+      <Card />
+      <Card />
+    </div>
+  )
 }
 
 export default Deck;
