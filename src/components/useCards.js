@@ -4,6 +4,7 @@ const useCards = () => {
    const [cards, setCards] = useState([
     {
       key: 1,
+      dataValue: 1,
       id: "card-1",
       title: "Bamboo",
       description: "A realistic description",
@@ -11,6 +12,7 @@ const useCards = () => {
     },
     {
       key: 2,
+      dataValue: 2,      
       id: "card-2",
       title: "Bear",
       description: "Another description",
@@ -18,6 +20,7 @@ const useCards = () => {
     },
     {
       key: 3,
+      dataValue: 3,
       id: "card-3",
       title: "Description",
       description: "A realistic description",
@@ -25,6 +28,7 @@ const useCards = () => {
     },
     {
       key: 4,
+      dataValue: 4,      
       id: "card-4",
       title: "Gold",
       description: "Another description",
@@ -32,6 +36,7 @@ const useCards = () => {
     },
     {
       key: 5,
+      dataValue: 5,
       id: "card-5",
       title: "Header",
       description: "A realistic description",
@@ -39,6 +44,7 @@ const useCards = () => {
     },
     {
       key: 6,
+      dataValue: 6,
       id: "card-6",
       title: "Leaf",
       description: "Another description",
@@ -46,6 +52,7 @@ const useCards = () => {
     },
     {
       key: 7,
+      dataValue: 7,
       id: "card-7",
       title: "Moss",
       description: "A realistic description",
@@ -53,6 +60,7 @@ const useCards = () => {
     },
     {
       key: 8,
+      dataValue: 8,
       id: "card-8",
       title: "Stone",
       description: "Another description",
@@ -60,6 +68,7 @@ const useCards = () => {
     },
     {
       key: 9,
+      dataValue: 9,
       id: "card-9",
       title: "Title",
       description: "A realistic description",
@@ -67,6 +76,7 @@ const useCards = () => {
     },
     {
       key: 10,
+      dataValue: 10,
       id: "card-10",
       title: "Water",
       description: "Another description",
