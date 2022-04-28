@@ -5,8 +5,6 @@ import useCards from "./useCards";
 const Deck = () => {
   const [baseDeck, setBaseDeck] = useState(useCards());
 
-  const newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
   function randomize(array) {
     const initialLength = array.length;
     const currentArray = array.slice();
