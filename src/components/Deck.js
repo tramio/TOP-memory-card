@@ -9,8 +9,8 @@ const Deck = () => {
   const [currentCard, setCurrentCard] = useState(null);
 
   function onCardClick(e) {
-    console.log(e.target.dataset.value);
-    setCurrentCard(e.target.dataset.value);
+    console.log(e.currentTarget.dataset.value);
+    setCurrentCard(e.currentTarget.dataset.value);
     // if (currentHand.includes(currentCard)) {
     //   setCurrentHand([]);
     //   setCurrentScore(0);
