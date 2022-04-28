@@ -57,7 +57,8 @@ const useCards = () => {
       title: "Stone",
       description: "Another description",
       src: require("../assets/stone.png"),
-    },    {
+    },
+    {
       key: 9,
       id: "card-9",
       title: "Title",
