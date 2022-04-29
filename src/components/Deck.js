@@ -1,3 +1,4 @@
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import useCards from "./useCards";
@@ -9,7 +10,6 @@ const Deck = () => {
   const [currentCard, setCurrentCard] = useState(null);
 
   function onCardClick(e) {
-    console.log(e.currentTarget.dataset.value);
     setCurrentCard(e.currentTarget.dataset.value);
     // if (currentHand.includes(currentCard)) {
     //   setCurrentHand([]);
@@ -19,6 +19,11 @@ const Deck = () => {
       // setScore(prevState++);
     // }
   }
+
+  const [randomizedDeck, setRandomizedDeck] = useState(randomize(baseDeck));
+  useEffect(() => {
+    setRandomizedDeck(randomize(baseDeck));
+  }, [currentCard])
 
   function randomize(array) {
     const initialLength = array.length;
@@ -31,7 +36,6 @@ const Deck = () => {
     }
     return randomized;
   }
-  const [randomizedDeck, setRandomizedDeck] = useState(randomize(baseDeck));
 
   return (
     <div className="deck">
