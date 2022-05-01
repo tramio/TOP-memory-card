@@ -4,25 +4,16 @@ import Card from "./Card";
 import useCards from "./useCards";
 
 const Deck = () => {
-  const [baseDeck, setBaseDeck] = useState(useCards());
-  // const [score, setScore] = useState(0);
   const [currentCard, setCurrentCard] = useState(null);
-
   const [clickCounter, setClickCounter] = useState(0);
   function onCardClick(e) {
     setCurrentCard(e.currentTarget.dataset.value);
-    incrementCounter();
-
-    // if (currentHand.includes(currentCard)) {
-    //   setCurrentScore(0);
-    // } else {
-      // setScore(prevState++);
-    // }
+    incrementByOne(clickCounter, setClickCounter);
   }
-  function incrementCounter() {
-    let myCount = clickCounter;
-    myCount++;
-    setClickCounter(myCount);
+  function incrementByOne(state, setState) {
+    let newState = state;
+    newState++;
+    setState(newState);
   }
 
   const [currentHand, setCurrentHand] = useState([]);
@@ -35,6 +26,23 @@ const Deck = () => {
     }
   }, [clickCounter])
 
+  const [currentScore, setCurrentScore] = useState(0);
+  useEffect(() => {
+    if (currentHand.includes(currentCard)) {
+      setCurrentScore(0);
+    } else {
+      incrementByOne(currentScore, setCurrentScore);
+    }
+  }, [clickCounter]);
+
+  const [highScore, setHighScore] = useState(0);
+  useEffect(() => {
+    if (currentScore > highScore) {
+      setHighScore(currentScore);
+    }
+  }, [currentScore]);
+
+  const [baseDeck, setBaseDeck] = useState(useCards());
   const [randomizedDeck, setRandomizedDeck] = useState(randomize(baseDeck));
   useEffect(() => {
     setRandomizedDeck(randomize(baseDeck));
