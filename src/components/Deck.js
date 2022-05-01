@@ -6,24 +6,39 @@ import useCards from "./useCards";
 const Deck = () => {
   const [baseDeck, setBaseDeck] = useState(useCards());
   // const [score, setScore] = useState(0);
-  // const [currentHand, setCurrentHand] = useState([]);
   const [currentCard, setCurrentCard] = useState(null);
 
+  const [clickCounter, setClickCounter] = useState(0);
   function onCardClick(e) {
     setCurrentCard(e.currentTarget.dataset.value);
+    incrementCounter();
+
     // if (currentHand.includes(currentCard)) {
-    //   setCurrentHand([]);
     //   setCurrentScore(0);
     // } else {
-      // setCurrentHand(prevCurrentHand.push(currentCard));
       // setScore(prevState++);
     // }
   }
+  function incrementCounter() {
+    let myCount = clickCounter;
+    myCount++;
+    setClickCounter(myCount);
+  }
+
+  const [currentHand, setCurrentHand] = useState([]);
+  useEffect(() => {
+    if (currentHand.includes(currentCard) || currentCard === null) {
+      setCurrentHand([]);
+    } else {
+      let newHand = currentHand.slice().concat(currentCard);
+      setCurrentHand(newHand);
+    }
+  }, [clickCounter])
 
   const [randomizedDeck, setRandomizedDeck] = useState(randomize(baseDeck));
   useEffect(() => {
     setRandomizedDeck(randomize(baseDeck));
-  }, [currentCard])
+  }, [clickCounter]);
 
   function randomize(array) {
     const initialLength = array.length;
