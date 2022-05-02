@@ -46,6 +46,7 @@ img {
 .deck {
   height: auto;
   width: 90vw;
+  margin-top: 2rem;
   padding: 2rem;
   display: grid;
   grid-template-rows: repeat(auto-fill, 1fr);
@@ -66,4 +67,14 @@ img {
 
 .card h1 {
   color: var(--color-3);
+}
+
+.card:hover {
+  transform: rotate(3deg);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+main>p {
+  font-size: clamp(1.5rem, -0.875rem + 8.333vw, 2rem);
 }
