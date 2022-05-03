@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Card = (props) => {
   return (
-    <div key={props.value} id={props.id} onClick={props.onClick} className="card" data-value={props.dataValue}>
-      <img src={props.src}></img>
+    <div
+      key={props.value}
+      id={props.id}
+      onClick={props.onClick}
+      className="card"
+      data-value={props.dataValue}
+    >
+      <img src={props.src} alt=""></img>
       <h1>{props.title}</h1>
       <p>{props.description}</p>
     </div>
   );
-}
-
+};
 export default Card;

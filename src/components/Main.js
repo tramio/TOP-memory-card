@@ -29,7 +29,7 @@ const Main = (props) => {
     } else if (currentCard != null) {
       setCurrentScore(currentScore + 1);
     }
-  };
+  }
 
   const [highScore, setHighScore] = useState(0);
   useEffect(updateHighScore, [currentScore]);
@@ -50,25 +50,33 @@ const Main = (props) => {
     const currentArray = array.slice();
     const randomized = [];
     for (let i = 0; i < initialLength; i++) {
-      const randomIndex = Math.floor(Math.random()*(currentArray.length));
+      const randomIndex = Math.floor(Math.random() * currentArray.length);
       randomized.push(currentArray[randomIndex]);
       currentArray.splice(randomIndex, 1);
     }
     return randomized;
   }
-  
-  const deck = randomizedDeck.map(card => <Card dataValue={card.dataValue} description={card.description} id={card.id} key={card.value} onClick={onCardClick} src={card.src} title={card.title} />);
-  
+
+  const deck = randomizedDeck.map((card) => (
+    <Card
+      dataValue={card.dataValue}
+      description={card.description}
+      id={card.id}
+      key={card.value}
+      onClick={onCardClick}
+      src={card.src}
+      title={card.title}
+    />
+  ));
+
   return (
     <main>
       <h1>Memory Card!</h1>
       <p>Current score: {currentScore}</p>
       <p>High score: {highScore}</p>
-      <div className="deck">
-        {deck}
-      </div>
+      <div className="deck">{deck}</div>
     </main>
-  )
-}
+  );
+};
 
 export default Main;

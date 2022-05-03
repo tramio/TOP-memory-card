@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
 
 :root {
   --color-1: #dbc19c;
@@ -9,7 +9,7 @@
 
 body {
   width: 100%;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   background-color: var(--color-2);
   color: var(--color-3);
@@ -28,7 +28,7 @@ main {
   align-items: center;
 }
 
-main>h1 {
+main > h1 {
   color: var(--title);
   font-size: clamp(2.5rem, -0.875rem + 8.333vw, 4rem);
   margin: 2rem 0;
@@ -75,6 +75,6 @@ img {
   cursor: pointer;
 }
 
-main>p {
+main > p {
   font-size: clamp(1.5rem, -0.875rem + 8.333vw, 2rem);
 }

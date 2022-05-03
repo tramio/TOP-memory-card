@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const useCards = () => {
-   const [cards, setCards] = useState([
+  const [cards] = useState([
     {
       key: 1,
       dataValue: 1,
@@ -12,7 +12,7 @@ const useCards = () => {
     },
     {
       key: 2,
-      dataValue: 2,      
+      dataValue: 2,
       id: "card-2",
       title: "Bear",
       description: "Another description",
@@ -28,7 +28,7 @@ const useCards = () => {
     },
     {
       key: 4,
-      dataValue: 4,      
+      dataValue: 4,
       id: "card-4",
       title: "Gold",
       description: "Another description",
@@ -84,6 +84,6 @@ const useCards = () => {
     },
   ]);
   return cards;
-}
+};
 
 export default useCards;
